@@ -10,6 +10,7 @@ import DefaultMarkers from './screens/Map/DefaultMarkers';
 // import BG_Location from './screens/Location/BG_Location';
 // import GPS2 from './screens/Location/GPS2';
 import Profile from './screens/Profile';
+import {RNBGLocation} from './screens/Location/RNBGLocation';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -103,6 +104,8 @@ function HomeTabs() {
             iconName = focused ? 'ios-list-box' : 'ios-list';
           } else if (route.name === 'Map') {
             iconName = focused ? 'ios-list-box' : 'ios-list';
+          } else if (route.name === 'Location') {
+            iconName = focused ? 'ios-list-box' : 'ios-list';
           }
 
           // You can return any component that you like here!
@@ -114,8 +117,8 @@ function HomeTabs() {
         inactiveTintColor: 'gray',
       }}>
       <Tab.Screen headerMode="none" name="Home" component={HomeScreen} />
-      <Tab.Screen name="Track" component={HomeScreen} />
-      {/* <Tab.Screen name="Location" component={LocationAPI} /> */}
+      {/* <Tab.Screen name="Track" component={HomeScreen} /> */}
+      <Tab.Screen name="Location" component={RNBGLocation} />
       {/* <Tab.Screen name="location" component={BG_Location} /> */}
       <Tab.Screen name="Map" component={DefaultMarkers} />
       {/* <Tab.Screen name="BG Location" component={GPS2} /> */}
